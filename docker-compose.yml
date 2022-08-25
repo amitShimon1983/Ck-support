@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+#  mongo-db:
+#    image: flqw/docker-mongo-local-replicaset
+#    volumes:
+#      - ~/mongodb:/data
+#    environment:
+#      REPLICA_SET_NAME: mongo-rs
+#    ports:
+#      - "27001:27001"
+#      - "27002:27002"
+#      - "27003:27003"
+#    networks:
+#      - gateway
+  server:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    # entrypoint: "http-server"
+    entrypoint: "yarn backend:serve"
+    working_dir: /app
+#    volumes:
+#      -  .:/app
+    environment:
+      DB_CONNECTION_STRING:
+    ports:
+      - "3978:3978"
+    networks:
+      - gateway
+
+networks:
+  gateway: {}

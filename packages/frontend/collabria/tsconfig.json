@@ -1,0 +1,24 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "rootDirs": ["src", "stories"],
+    "baseUrl": "./",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ],
+      "@harmon.ie/collabria-frontend-storybook": [
+        "../../storybook/src"
+      ],
+      "@harmon.ie/collabria-frontend-shared": [
+        "../../shared/src"
+      ],
+      "@harmon.ie/collabria-frontend-ckeditor": [
+        "../../ckeditor/src"
+      ]
+    }
+  },
+  "include": ["src"]
+}

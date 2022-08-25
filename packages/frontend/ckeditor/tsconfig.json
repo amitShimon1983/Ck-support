@@ -1,0 +1,15 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "rootDirs": ["src"],
+    "baseUrl": "./",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ],
+    }
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,14 @@
+html,
+body {
+  height: 99%;
+  width: 99%;
+  overflow: hidden;
+}
+#root {
+  height: 100%;
+  width: 100%;
+}
+.message-detail-details-container img {
+  border-radius: 50%;
+  border: 1px solid black;
+}

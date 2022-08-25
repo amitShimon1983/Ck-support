@@ -1,0 +1,25 @@
+FROM alpine
+
+RUN apk add --update nodejs npm git yarn
+
+RUN npm install ts-node typescript tsconfig-paths bunyan jest rimraf http-server -g
+
+#COPY . /
+#
+#
+#RUN yarn nuke-r \
+#    && rm -rf packages/backend/subscriptions \
+#    && rm yarn.lock \
+#    && yarn \
+#    && yarn frontend:build \
+#    && yarn email-teammate:build
+#
+#RUN mkdir -p /packages/backend/server/static
+#RUN cp -R /packages/frontend/collabria/dist/** /packages/backend/server/static
+ENV NODE_ENV=production
+
+EXPOSE 3978
+WORKDIR /app
+RUN yarn
+#ENTRYPOINT ["http-server"]
+#ENTRYPOINT ["yarn", "backend:serve"]
